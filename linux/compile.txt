@@ -1,0 +1,1 @@
+gcc *.c libft.a mlx_Linux.a -lX11 -lXext -o fractol
