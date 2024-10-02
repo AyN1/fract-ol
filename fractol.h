@@ -20,7 +20,7 @@
 # include <unistd.h>
 //# include <X11/X.h>
 //# include "minilibx-linux/mlx.h"
-# include "/usr/local/include/mlx.h"
+# include "mlx.h"
 
 # define ERROR_MESSAGE "Usage: \t./fractol mandelbrot\n\t\
 ./fractol julia <value_1> <value_2>\n"

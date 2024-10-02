@@ -18,18 +18,21 @@ HEADER = -I .
 all: $(NAME)
 
 $(NAME): libft.a $(OBJ)
-	@gcc $(CFLAG) $(SRC) libft/libft.a /usr/local/lib/libmlx.a -framework OpenGL -framework Appkit -o $(NAME)
+	@gcc $(CFLAG) $(SRC) libft/libft.a minilibx/libmlx.a -framework OpenGL -framework Appkit -o $(NAME)
 	@echo $(NAME) compiled
+	@echo "run ./fractol"
 # $@ is for %.o, i.e the name of the rule, and %< is for %^.c , i.e the dependecies of the rule
 %.o : %.c
 	@gcc $(CFLAG) $(HEADER) -o $@ -c $<
 	@echo fractol dependecies compiled with $(CFLAGS)
 libft.a:
 	@make -C ./libft
+	@make -C ./minilibx
 
 clean:
 	@rm -rf $(OBJ)
 	@make -C ./libft clean
+	@make -C ./minilibx clean
 
 fclean: clean
 	@rm -rf $(NAME)
